@@ -1,5 +1,24 @@
 var connection = require ("./connection.js");
-var orm = {};
+var orm = {
+//	selectAll: function(); 
+ 	insertOne: function (burgerName,table){
+ 		var queryString = "INSERT INTO ?? VALUES ??";
+ 		connection.query(queryString, [table, burgerName], function(err,result) {
+ 		  if (err) throw err;
+      	  console.log(result);	
+ 		});
+ 	},
+
+  //Determine which table, which burger and what to change
+ 	  updateOne: function (table,devoured,property,burgerName){
+    var queryString = "UPDATE ?? SET ?? = TRUE WHERE ?? = ?";
+    var querstring = 
+    connection.query(queryString, [table,devoured,property,burgerName], function(err,result) {
+      if (err) throw err;
+          console.log(result);  
+    })
+  }
+};
 module.exports = orm;
 
 
@@ -9,8 +28,15 @@ module.exports = orm;
 
 
 
-
+/*
 //Reference
+
+INSERT INTO burgers (burger_name, devoured) VALUES ('Bacon Burger', FALSE);
+
+
+
+
+
 var orm = {
   selectWhere: function(tableInput, colToSearch, valOfCol) {
     var queryString = "SELECT * FROM ?? WHERE ?? = ?";
@@ -40,6 +66,4 @@ var orm = {
       }
     );
   }
-};
-
-module.exports = orm;
+};*/
