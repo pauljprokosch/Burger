@@ -8,7 +8,13 @@ var orm = {
       	  console.log(result);	
  		});
  	},
-
+  selectAll: function (table,property,burgerName){
+    var queryString = "SELECT * FROM ?? where ?? = ?";
+    connection.query(queryString, [table, property,burgerName], function(err,result) {
+      if (err) throw err;
+          console.log(result);  
+    });
+  },
   //Determine which table, which burger and what to change
  	  updateOne: function (table,devoured,property,burgerName){
     var queryString = "UPDATE ?? SET ?? = TRUE WHERE ?? = ?";

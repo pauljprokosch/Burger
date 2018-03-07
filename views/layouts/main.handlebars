@@ -11,9 +11,38 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
 </head>
+
 <body>
-    {{{ body }}} {{!-- Add in jQuery --}}
+     <div class="jumbotron">
+        <h1 class="text-center">Burger</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+              <h2>Burgers</h2>
+              <hr>
+            <div id="burger-area">
+             <!-- insert index handle bars -->
+             {{{index}}}
+                <div class="row">
+                    <!-- This is where we want the ready to devour burgers -->
+                    <div class="col-sm-4" id = "devour"></div>
+                    <div class="col-sm-4"></div>
+                   <!--  This is where the devoured burgers go. -->
+                    <div class="col-sm-4" id = "2bdevoured"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <textarea class="form-control" rows="3" id="burger-name" placeholder="Type the name of the burger"></textarea>
+          <button id="submit-button" class="btn btn-lg pull-right">Add a Burger!</button>
+        </div>
+      </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="/assets/js/script.js"></script>
+    <script type="text/javascript" src="js/burger.js"></script>
 </body>
 </html>
